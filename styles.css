@@ -1,0 +1,61 @@
+/* Global box-sizing reset */
+* {
+    box-sizing: border-box;
+}
+
+/* Type selector */
+p {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Class selector used on multiple elements */
+.button-link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4a90e2;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Box model example */
+.header-box {
+    padding: 20px;
+    border: 3px solid #4a90e2;
+    margin: 25px;
+    background-color: #e8f2ff;
+}
+
+/* Form styling */
+form div {
+    margin-bottom: 12px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #999;
+    padding: 10px;
+}
+
+table caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
