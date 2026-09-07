@@ -1,61 +1,75 @@
-/* Global box-sizing reset */
+/* Global reset */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/* Type selector */
-p {
-    color: #333;
-    line-height: 1.6;
+/* Basic page styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-/* Class selector used on multiple elements */
-.button-link {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #4a90e2;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+/* PAGE GRID WRAPPER */
+.page-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }
 
-/* Box model example */
-.header-box {
-    padding: 20px;
-    border: 3px solid #4a90e2;
-    margin: 25px;
-    background-color: #e8f2ff;
+/* Header + Footer */
+.site-header,
+.site-footer {
+  grid-column: 1 / -1;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  text-align: center;
 }
 
-/* Form styling */
-form div {
-    margin-bottom: 12px;
+/* GRID SECTION (main content) */
+.site-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
 }
 
-form input,
-form textarea {
+/* Section styling */
+.about-section,
+.interests-section,
+.contact-section,
+.projects-section {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+}
+
+/* FLEXBOX SECTION */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+/* Contact link styling */
+.contact-link {
+  padding: 0.5rem 1rem;
+  background-color: #0077cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* MEDIA QUERY (responsive layout) */
+@media (max-width: 600px) {
+  .site-main {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-link {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #aaa;
-    border-radius: 4px;
+    text-align: center;
+  }
 }
-
-/* Table styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table th,
-table td {
-    border: 1px solid #999;
-    padding: 10px;
-}
-
-table caption {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
