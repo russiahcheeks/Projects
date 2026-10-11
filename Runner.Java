@@ -1,29 +1,13 @@
-import java.util.Scanner;
-
 public class Runner {
     public static void main(String[] args) {
 
-        Scanner scnr = new Scanner(System.in);
+        // Instantiate Tests object
+        Tests t = new Tests();
 
-        // First Pet: default constructor
-        Pet p1 = new Pet();
-        System.out.println(p1.toString());
+        // Call getAverage() to collect scores
+        t.getAverage();
 
-        // Second Pet: custom constructor
-        Pet p2 = new Pet("Buster", "Dog", 11);
-        System.out.println(p2.toString());
-
-        // Third Pet: user input
-        System.out.println("Enter animal type:");
-        String userType = scnr.nextLine();
-
-        System.out.println("Enter animal name:");
-        String userName = scnr.nextLine();
-
-        System.out.println("Enter animal age:");
-        int userAge = scnr.nextInt();
-
-        Pet p3 = new Pet(userName, userType, userAge);
-        System.out.println(p3.toString());
+        // Print results
+        System.out.println(t.toString());
     }
 }

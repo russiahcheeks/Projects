@@ -1,71 +1,41 @@
 public class Pet {
 
-    // Private data fields
-    private String name;
-    private String type;
-    private int age;
+   // Private data
+   private String name;
 
-    // Default constructor
-    public Pet() {
-        this.name = "Pet Name";
-        this.type = "Animal";
-        this.age = 1;
-    }
+   // Default constructor
+   public Pet() {
+      setName("Pet Name");
+   }
 
-    // Custom constructor with 3 parameters
-    public Pet(String name, String type, int age) {
-        this.setName(name);
-        this.setType(type);
-        this.setAge(age);
-    }
+   // Mutator (set)
+   public void setName(String name) {
+      this.name = name;
+   }
 
-    // Set methods (mutators)
-    public void setName(String name) {
-        this.name = name;
-    }
+   // Accessor (get)
+   public String getName() {
+      return name;
+   }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+   // toString method
+   public String toString() {
+      String info = "";
+      info += "Pet information:\n";
+      info += "Name: " + name + "\n";
+      return info;
+   }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+   // main method in same file
+   public static void main(String[] args) {
 
-    // Get methods (accessors)
-    public String getName() {
-        return this.name;
-    }
+      // First Pet object using default constructor
+      Pet p1 = new Pet();
+      System.out.println(p1.toString());
 
-    public String getType() {
-        return this.type;
-    }
-
-    public int getAge() {
-        return this.age;
-    }
-
-    // Custom speak() method
-    public String speak() {
-        if (type.equalsIgnoreCase("dog")) {
-            return "Woof";
-        }
-        else if (type.equalsIgnoreCase("cat")) {
-            return "Meow";
-        }
-        else {
-            return "Noise";
-        }
-    }
-
-    // toString method
-    public String toString() {
-        String output = "";
-        output += "Pet information:\n";
-        output += "Type: " + this.type + "\n";
-        output += "Name: " + this.name + "\n";
-        output += "Sound: " + this.speak() + "\n";
-        output += "Age: " + this.age + "\n";
-        return output;
-    }
+      // Second Pet object using set method
+      Pet p2 = new Pet();
+      p2.setName("Buster");
+      System.out.println(p2.toString());
+   }
 }
