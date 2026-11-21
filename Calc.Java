@@ -5,27 +5,55 @@ public class Calc {
     private double num1;
     private double num2;
 
-    // Constructor: asks user for two numbers
     public Calc() {
         Scanner sc = new Scanner(System.in);
 
+        // Input for num1
         System.out.print("Please enter the first number: ");
+        while (!sc.hasNextDouble()) {
+            System.out.println("Invalid input. Please enter a numeric value.");
+            sc.next(); // discard bad input
+            System.out.print("Please enter the first number: ");
+        }
         num1 = sc.nextDouble();
 
+        // Input for num2
         System.out.print("Please enter the second number: ");
+        while (!sc.hasNextDouble()) {
+            System.out.println("Invalid input. Please enter a numeric value.");
+            sc.next(); // discard bad input
+            System.out.print("Please enter the second number: ");
+        }
         num2 = sc.nextDouble();
     }
 
-    // Getters
-    public double getNum1() {
-        return num1;
+    double num1;
+
+while (true) {
+    System.out.print("Enter first number: ");
+
+    if (scnr.hasNextDouble()) {
+        num1 = scnr.nextDouble();
+        break;
     }
 
-    public double getNum2() {
-        return num2;
+    System.out.println("Invalid input. Please enter a number.");
+    scnr.next();
+}
+
+   double num2;
+
+while (true) {
+    System.out.print("Enter second number: ");
+
+    if (scnr.hasNextDouble()) {
+        num2 = scnr.nextDouble();
+        break;
     }
 
-    // Arithmetic methods
+    System.out.println("Invalid input. Please enter a number.");
+    scnr.next();
+}
     public double sum() {
         return num1 + num2;
     }
@@ -42,7 +70,6 @@ public class Calc {
         return num1 / num2;
     }
 
-    // toString
     public String toString() {
         String info = "";
         info += "Displaying private data fields using toString():\n";
